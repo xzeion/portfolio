@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 services:
   portfolio:
@@ -9,6 +9,8 @@ services:
       --cert-file dev.pem 
       --key-file dev-key.pem 
       --nopin
+    volumes:
+      - ./portfolio:/code
     depends_on:
       - db
     networks:
