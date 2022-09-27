@@ -6,8 +6,8 @@ services:
     build: .
     command: python manage.py 
       runserver_plus 0.0.0.0:8000 
-      --cert-file dev.pem 
-      --key-file dev-key.pem 
+      --cert-file /code/portfolio.dev+4.pem
+      --key-file /code/portfolio.dev+4-key.pem
       --nopin
     volumes:
       - ./portfolio:/code

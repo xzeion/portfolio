@@ -10,11 +10,14 @@ docker exec -it portfolio python manage.py migrate
 docker exec -it portfolio python manage.py shell -c \
 "from django.contrib.auth import get_user_model;
 User = get_user_model();
-User.objects.create_superuser(
-  'brian',
-  'brian@gratton.us',
-  'ChangeMe!'
-)"
+try:
+  User.objects.create_superuser(
+    'brian',
+    'brian@gratton.us',
+    'ChangeMe!'
+  )
+except: pass
+"
 
 # TODO: call docker run again to build out dummy data
 # from management command once you have that written
